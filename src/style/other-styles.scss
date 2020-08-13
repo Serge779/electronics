@@ -1,0 +1,358 @@
+@import "./colors.scss";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins-Regular";
+    color: $black;
+    font-size: 15px;
+    background-color: $white;
+}
+
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    outline: none;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1550px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: $black;
+
+    span {
+        font-family: 'Gilroy-ExtraBold';
+        font-size: 24px;
+        margin-left: 8px;
+    }
+}
+
+.btn {
+    background: $blueBtn;
+    color: $white;
+    border: none;
+    cursor: pointer;
+}
+
+.border-r {
+    border-radius: 3px;
+}
+
+.border-s {
+    border: .5px solid $darkGray;
+}
+
+.product {
+    margin-top: 26px;
+    width: 100%;
+    max-width: 282px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 14px 15px;
+    font-family: "Poppins-SemiBold";
+    font-size: 16px;
+
+    &__sale, &__soldout {
+        font-family: "Poppins-Medium";
+        position: absolute;
+        top: -8px;
+        left: 0;
+        font-size: 14px;
+        width: 47px;
+        height: 23px;
+        text-align: center;
+        line-height: 23px;
+        background: $lightRed;
+        color: $white;
+    }
+
+    &__soldout {
+        width: 75px;
+    }
+
+    &__img {
+        position: relative;
+        height: 230px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__price {
+
+        .product-sale {
+            font-size: 12px;
+            color: $lightGray;
+        }
+    }
+
+    &__rate {
+        margin-top: 48px;
+
+        i {
+            color: $lightRed;
+            font-size: 13px;
+        }
+    }
+
+    &__name {
+        letter-spacing: 0.24px;
+        margin-top: 8px;
+    }
+
+    &--margin {
+        margin: 0;
+    }
+
+}
+
+.products-block {
+    padding: 11px 16px 18px 16px;
+    margin-bottom: 24px;
+
+    &__title {
+        font-family: "Poppins-Medium";
+        font-size: 16px;
+        text-transform: uppercase;
+
+        &--filter {
+            margin-bottom: 11px;
+            display: block;
+        }
+    }
+
+    .products-block-list {
+        border-top: 1px solid $darkGray;
+        padding-top: 20px;
+        margin-top: 11px;
+
+        &__item {
+            font-size: 14px;
+            margin-bottom: 13px;
+
+            a {
+                color: $black;
+            }
+
+            i {
+                font-size: 12px;
+                margin-right: 16px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--filter {
+        padding: 0;
+
+        .products-list__item {
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+
+            .products-color {
+                width: 17px;
+                height: 17px;
+                border-radius: 50%;
+                margin-right: 8px;
+
+                &--red {
+                    background: #FF0100;
+                }
+
+                &--black {
+                    background: #000000;
+                }
+
+                &--blue {
+                    background: #4516EE;
+                }
+
+                &--white {
+                    background: #fff;
+                    border: 0.5px solid #BBBBBB;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 91px;
+
+    &__container {
+        width: 100%;
+        max-width: 209px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__left, &__right {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid #EFEFEF;
+        background: $white;
+        color: $black;
+        cursor: pointer;
+    }
+
+    .list {
+        width: 100%;
+        max-width: 70px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 29px;
+
+        &__item {
+
+            a {
+                color: $black;
+                font-size: 16px;
+                transition: all .2s;
+
+                &:hover {
+                    color: $blueBtn;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.cart-hover {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: $white;
+    width: 360px;
+    padding: 27px 30px 29px 30px;
+    box-shadow: 3px 3px 15px #00000012;
+    border-radius: 5px;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+    cursor: context-menu;
+
+    &__block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 26px;
+
+        &:last-child {
+            margin-bottom: 33px;
+        }
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #EFEFEF;
+        margin-right: 9px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        max-width: 158px;
+    }
+
+    &__title {
+        font-size: 14px;
+    }
+
+    &__quantity-container {
+        font-family: "Poppins-Medium";
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 102px;
+        font-size: 12px;
+        color: $darkGray-2;
+    }
+    &__delete {
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+        margin-left: 59px;
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
+
+.slider-block {
+    &__title {
+        font-size: 16px;
+        font-family: "Poppins-Medium";
+    }
+
+    .slider-block-slider {
+        margin-top: 23px;
+        position: relative;
+        .owl-nav {
+            position: absolute;
+            top: -57px;
+            right: 0;
+            margin: 0;
+
+            button {
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                border: 1px solid #EFEFEF;
+                background: $white;
+                color: $black;
+                cursor: pointer;
+
+                i {
+                    font-size: 12px;
+                }
+
+                &:hover {
+                    background: $white;
+                    color: $black;
+                }
+            }
+        }
+    }
+}
